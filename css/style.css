@@ -1,0 +1,31 @@
+@font-face{
+	font-family: indieflower;
+	src: url(https://fonts.googleapis.com/css?family=Indie+Flower);
+}
+p{
+	text-align: center;
+	font-family: indie-flower;
+	font-size: 30px;
+	padding: 2%;
+}
+#container{
+	margin: 0 auto;
+	width: 62%;
+    height: 80%;
+}
+div.person {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.person img {
+    width: 100%;
+    height: auto;
+}
+
+div.info {
+    padding: 15px;
+    text-align: center;
+   }
