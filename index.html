@@ -1,64 +1,25 @@
-<html ng-app="app">
+<html ng-app="imdb">
 	<head>
 		<meta charset="UTF-8" />
 		<title>Actors</title>
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="JS/angular.js"></script>
-		<script src="app/app.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="app/imdb.js"></script>
 	</head>
 	<body>
-		<div ></div>
-		<p>Actors and Actresses</p>
-		
-		Search : <input ng-model="search" />
-		
-		<div ng-controller="ctrl1">
+		<div ng-controller="gallery">
+			<p>Actors and Actresses</p>
+			<div id="search"> Search:
+			<input ng-model="query" />
+			</div>
+			<button ng-click="sort("up")">UP</button>|<button ng-click="sort("down")">DOWN</button>
 			
-			
-		</div>
-		<div id="container">
-			
-		<!--img ONE-->
-		<div class="person">
-   		    <img src="img/ChrisEvans.jpg">
-  			<div class="info">Chris Evans</div>
-		</div>
-		<!--END img ONE-->
+			<div ng-repeat="actor in actors | filter:{name:query}| orderBy:upDown" class="actor-box" >
+				<img ng-src="img/{{actor.img}}">
+				<a ng-href="{{actor.path}}" target="_blank">{{actor.name}}</a>
+			</div>
 		
-		<!--img TWO-->
-		<div class="person">
-   		    <img src="img/EmiliaClarke.jpg">
-  			<div class="info">Emilia Clarke</div>
-		</div>
-		<!--END img TWO-->
 		
-		<!--img THREE-->
-		<div class="person">
-   		    <img src="img/EmmaWatson.jpg">
-  			<div class="info">Emma Watson</div>
-		</div>
-		<!--END img THREE-->
-		
-		<!--img FOUR-->
-		<div class="person">
-   		    <img src="img/KitHarington.jpg">
-  			<div class="info">Kit Harington</div>
-		</div>
-		<!--END img FOUR-->
-		
-		<!--img FIVE-->
-		<div class="person">
-   		    <img src="img/LizzyCaplan.jpg">
-  			<div class="info">Lizzy Caplan</div>
-		</div>
-		<!--END img FIVE-->
-		
-		<!--img SIX-->
-		<div class="person">
-   		    <img src="img/MichaelFassbender.jpg">
-  			<div class="info">Michael Fassbender</div>
-		</div>
-		<!--END img SIX-->
-		</div><!--closing CONTAINER div-->
+	   </div> <!-- END CONTROLLER GALLERY-->
 	</body>
 </html>
