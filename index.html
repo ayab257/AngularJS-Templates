@@ -1,25 +1,25 @@
 <html ng-app="imdb">
 	<head>
-		<meta charset="UTF-8" />
-		<title>Actors</title>
-		<link rel="stylesheet" href="css/style.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+		<title>IMDB</title>
+		<link href="css/style.css" rel="stylesheet" />
 		<script src="js/angular.js"></script>
+		<!--app-->
 		<script src="app/imdb.js"></script>
+		
+		<!--controllers-->
+		<script src="app/controllers/searchBox.js"></script>
+		
 	</head>
 	<body>
-		<div ng-controller="gallery">
-			<p>Actors and Actresses</p>
-			<div id="search"> Search:
-			<input ng-model="query" />
-			</div>
-			<button ng-click="sort("up")">UP</button>|<button ng-click="sort("down")">DOWN</button>
+		
+		<div ng-controller="searchBox">
+			<input input ng-model='searchName'ng-change="getActors()" />
 			
-			<div ng-repeat="actor in actors | filter:{name:query}| orderBy:upDown" class="actor-box" >
-				<img ng-src="img/{{actor.img}}">
-				<a ng-href="{{actor.path}}" target="_blank">{{actor.name}}</a>
+			<div ng-repeat="r in results">
+				{{r.name}}
 			</div>
-		
-		
-	   </div> <!-- END CONTROLLER GALLERY-->
+
+	   </div> <!-- END CONTROLLER searchBox-->
 	</body>
 </html>
