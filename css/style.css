@@ -1,0 +1,12 @@
+.actor{
+	float: left;
+	margin: 10px;
+}
+.actor img{
+	width: 100px;
+	margin: 5px;
+}
+
+.cetner-text{
+	text-align: center;
+}

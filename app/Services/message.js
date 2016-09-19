@@ -6,7 +6,6 @@
 		
 		return {
 			print : function(text) {
-				alert("hello " + text);
 			}
 		};
 	}

@@ -6,24 +6,43 @@
 		<script src="js/angular.js"></script>
 		<!--app-->
 		<script src="app/imdb.js"></script>
-		
+
 		<!--controllers-->
 		<script src="app/controllers/searchBox.js"></script>
-		<script src="app/Services/message.js"></script>
 		<!-- <script src="app/controllers/img.js"></script> -->
-		
+
+		<!--services-->
+		<script src="app/Services/message.js"></script>
+
 	</head>
 	<body>
-		
+
 		<div ng-controller="searchBox">
-			<input input ng-model='searchName'ng-change="getActors()" />
-			
-			<div ng-repeat="r in results">
-				{{r.name}}
-			 	<hr>
-			 	<img ng-src="http://image.tmdb.org/t/p/w500{{r.profile_path}}" />
+			<div>
+				<input placeholder="search" input ng-model='searchName' ng-change="getActors()" />
 			</div>
 
-	   </div> <!-- END CONTROLLER searchBox-->
+			<div ng-show="!moviesLoaded">
+				<div class="actor" ng-repeat="r in results" ng-click="getMoviesById(actor.id)">
+					<div class="center-name">
+						{{r.name}}
+					</div>
+					<hr>
+					<img ng-src="{{SITE_PATH}}/{{r.profile_path}}" />
+				</div>
+			</div><!--end of movies loaded-->
+			
+			<div ng-show="moviesLoaded">
+				<div ng-repeat="c in cast" class="actor">
+					<div class="center-name">
+						{{c.original_title}}
+					</div>
+					<img ng-src="{{SITE_PATH}}/{{c.poster_path}}" />
+
+				</div>
+			</div>
+			
+		</div><!-- END CONTROLLER searchBox-->
+		
 	</body>
 </html>
