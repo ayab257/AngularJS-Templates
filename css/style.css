@@ -1,3 +1,9 @@
+body{
+	background-color: #f2cac1;
+}
+h1{
+	text-align: center;
+}
 .actor{
 	float: left;
 	margin: 10px;

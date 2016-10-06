@@ -3,23 +3,16 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
 		<title>IMDB</title>
 		<link href="css/style.css" rel="stylesheet" />
-		<script src="js/angular.js"></script>
-		<!--app-->
-		<script src="app/imdb.js"></script>
-
-		<!--controllers-->
-		<script src="app/controllers/searchBox.js"></script>
-		<!-- <script src="app/controllers/img.js"></script> -->
-
-		<!--services-->
-		<script src="app/Services/message.js"></script>
+		<link href="css/bootstrap-3.3.7-dist.zip" rel="stylesheet" />
+	
 
 	</head>
 	<body>
-
-		<div ng-controller="searchBox">
+		<h1> The Movie DB </h1>
+		<movie-db></movie-db>
+		<!-- <div ng-controller="searchBox">
 			<div>
-				<input placeholder="search" input ng-model='searchName' ng-change="getActors()" />
+				<input placeholder="search" ng-model='searchName' ng-change="getActors()" />
 			</div>
 
 			<div ng-show="!moviesLoaded">
@@ -32,7 +25,7 @@
 				</div>
 			</div><!--end of movies loaded-->
 			
-			<div ng-show="moviesLoaded">
+			<!-- <div ng-show="moviesLoaded">
 				<div ng-repeat="c in cast" class="actor">
 					<div class="center-name">
 						{{c.original_title}}
@@ -43,7 +36,22 @@
 				</div>
 			</div>
 			
-		</div><!-- END CONTROLLER searchBox-->
+		</div> <!-- END CONTROLLER searchBox-->
 		
+		
+		<!--SCRIPTS-->
+			<script src="js/angular.js"></script>
+		<!--app-->
+		<script src="app/imdb.js"></script>
+
+		<!--controllers-->
+		<script src="app/controllers/searchBox.js"></script>
+		<!-- <script src="app/controllers/img.js"></script> -->
+		
+		<!--directives-->
+		<script src="app/directives/movie-db.js"></script>
+
+		<!--services-->
+		<script src="app/Services/message.js"></script>
 	</body>
 </html>
